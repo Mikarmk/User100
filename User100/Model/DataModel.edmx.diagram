@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="790230608d9848399f66669e13ebf57e" Name="Diagram1" ZoomLevel="52">
+        <EntityTypeShape EntityType="User100Model.Adres" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="User100Model.Categoria" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="User100Model.Korzina" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="User100Model.Polzovatel" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="User100Model.Postavchik" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="User100Model.Proizvoditel" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="User100Model.Rol" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="User100Model.Tovar" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="User100Model.Zakaz" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="User100Model.ZakazStatus" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="User100Model.FK__Zakaz__AdresID__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="User100Model.FK__Tovar__Categoria__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="User100Model.FK__Korzina__TovarID__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="User100Model.FK__Korzina__ZakazID__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="User100Model.FK__Polzovate__RolID__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="User100Model.FK__Zakaz__Polzovate__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="User100Model.FK__Tovar__Postavchi__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="User100Model.FK__Tovar__Proizvodi__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="User100Model.FK__Zakaz__ZakazStat__5629CD9C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
