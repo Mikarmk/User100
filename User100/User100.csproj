@@ -115,6 +115,9 @@
     <Compile Include="View\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditTovarWindow.xaml.cs">
+      <DependentUpon>EditTovarWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\GuestWindow.xaml.cs">
       <DependentUpon>GuestWindow.xaml</DependentUpon>
     </Compile>
@@ -136,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditTovarWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

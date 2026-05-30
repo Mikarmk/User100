@@ -5,31 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:User100.View"
         mc:Ignorable="d"
-        Title="UserWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
+        Title="Окно пользователя" Height="500" Width="900"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock x:Name="TextBlokUser" Grid.ColumnSpan="3"/>
-        <DataGrid x:Name="DG1" 
-                  Grid.Row="1" Grid.Column="0"
-                  Grid.RowSpan="5" Grid.ColumnSpan="6">
-             
-        </DataGrid>
+        <TextBlock x:Name="TextBlokUser"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   Margin="10"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="ItemsTovar">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="200"
+                                Margin="10"
+                                Padding="10"
+                                BorderBrush="Gray"
+                                BorderThickness="1"
+                                CornerRadius="8">
+                            <StackPanel>
+                                <Image Source="{Binding Foto}" Height="140" Stretch="UniformToFill"/>
+                                <TextBlock Text="{Binding Articul}" Margin="0,8,0,0" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding TovarName}" Margin="0,4,0,0" FontSize="15"/>
+                                <TextBlock Text="{Binding Cena, StringFormat=Цена: {0}}" Margin="0,4,0,0"/>
+                                <TextBlock Text="{Binding Kolichestvo, StringFormat=Количество: {0}}" Margin="0,4,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Window>

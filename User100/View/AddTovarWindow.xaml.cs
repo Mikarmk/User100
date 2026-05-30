@@ -13,28 +13,33 @@ namespace User100.View
 
         private void Save_btn_Click(object sender, RoutedEventArgs e)
         {
-            
-            
-            using (var context = new User100Entities())
+            try
             {
-                Tovar t = new Tovar();
-                t.Articul = TB_Articul.Text;
-                t.TovarName = TB_TovarName.Text;
-                t.Cena = Convert.ToInt32(TB_Cena.Text);
+                using (var context = new User100Entities())
+                {
+                    context.Database.ExecuteSqlCommand(
+                        "INSERT INTO Tovar (Articul, TovarName, Cena, Skidka, Kolichestvo, Opisanye) VALUES ({0}, {1}, {2}, {3}, {4}, {5})",
+                        TB_Articul.Text,
+                        TB_TovarName.Text,
+                        Convert.ToInt32(TB_Cena.Text),
+                        string.IsNullOrWhiteSpace(TB_Skidka.Text) ? 0 : Convert.ToInt32(TB_Skidka.Text),
+                        string.IsNullOrWhiteSpace(TB_Kolichestvo.Text) ? 0 : Convert.ToInt32(TB_Kolichestvo.Text),
+                        TB_Opisanye.Text
+                    );
+                }
 
-                context.Tovar.Add(t);
-                MessageBox.Show(t.Id.ToString());
-                context.SaveChanges();
-
+                MessageBox.Show("Товар добавлен");
+                Close();
             }
-
-            MessageBox.Show("Товар добавлен");
-            this.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
+            }
         }
 
         private void Cancel_btn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

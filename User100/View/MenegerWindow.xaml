@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:User100.View"
         mc:Ignorable="d"
-        Title="MenegerWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Окно менеджера" Height="500" Width="900"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="TextBlockUser"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   Margin="0,0,0,10"/>
+
+        <TextBox x:Name="SearchBox"
+                 Grid.Row="1"
+                 Width="220"
+                 Height="28"
+                 HorizontalAlignment="Left"
+                 Margin="0,0,0,10"
+                 TextChanged="SearchBox_TextChanged"/>
+
+        <DataGrid x:Name="DG_Tovar"
+                  Grid.Row="2"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Артикул" Binding="{Binding Articul}" Width="100"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding TovarName}" Width="150"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Cena}" Width="90"/>
+                <DataGridTextColumn Header="Скидка" Binding="{Binding Skidka}" Width="90"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Kolichestvo}" Width="110"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Opisanye}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

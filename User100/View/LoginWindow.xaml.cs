@@ -41,12 +41,12 @@ namespace User100.View
                     return;
                 } else if (user.RolID == 1)
                 {
-                    AdminWindow adminWindow = new AdminWindow();
+                    AdminWindow adminWindow = new AdminWindow(user);
                     adminWindow.Show();
                     this.Close();
                 } else if (user.RolID == 2)
                 {
-                    MenegerWindow menegerWindow = new MenegerWindow();
+                    MenegerWindow menegerWindow = new MenegerWindow(user);
                     menegerWindow.Show();
                     this.Close();
                 } else if (user.RolID == 3)
@@ -65,8 +65,8 @@ namespace User100.View
 
         private void Btn_go_Click(object sender, RoutedEventArgs e)
         {
-            GuestWindow guestWindow = new GuestWindow();
-            guestWindow.Show();
+            UserWindow userWindow = new UserWindow(null);
+            userWindow.Show();
             this.Close();
         }
     }

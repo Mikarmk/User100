@@ -1,7 +1,7 @@
-﻿<Window x:Class="User100.View.AddTovarWindow"
+﻿<Window x:Class="User100.View.EditTovarWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Добавление товара"
+        Title="Редактирование товара"
         Height="420" Width="400"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
